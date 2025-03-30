@@ -5,12 +5,14 @@ public class HelloApplication {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         int min = 1000000;
+        int a = input.nextInt();
         int n = input.nextInt();
         //System.out.println(problem1(n, min));
         //System.out.println(problem2(n));
         //System.out.println(problem3(n));
         //System.out.println(problem4(n));
-        System.out.println(problem5(n));
+        //System.out.println(problem5(n));
+        System.out.println(problem6(a,n));
 
     }
     public static int problem1(int n, int min) {
@@ -61,6 +63,13 @@ public class HelloApplication {
             return 1;
         } else {
             return problem5(n - 1) + problem5(n - 2);
+        }
+    }
+    public static int problem6(int a, int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return a * problem6(a, n - 1);
         }
     }
 }
