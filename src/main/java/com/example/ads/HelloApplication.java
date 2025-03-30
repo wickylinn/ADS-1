@@ -9,7 +9,9 @@ public class HelloApplication {
         //System.out.println(problem1(n, min));
         //System.out.println(problem2(n));
         //System.out.println(problem3(n));
-        System.out.println(problem4(n));
+        //System.out.println(problem4(n));
+        System.out.println(problem5(n));
+
     }
     public static int problem1(int n, int min) {
         int[] arr = new int[n];
@@ -51,5 +53,14 @@ public class HelloApplication {
             return 1;
         }
         return n*problem4(n-1);
+    }
+    public static int problem5(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return problem5(n - 1) + problem5(n - 2);
+        }
     }
 }
