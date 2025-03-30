@@ -21,7 +21,8 @@ public class HelloApplication {
         //System.out.println(problem6(a,n));
         //problem7(n-1, arr);
         //System.out.println(problem8(s) ? "Yes" : "No");
-        System.out.println(problem9(a, n));
+        //System.out.println(problem9(a, n));
+        System.out.println(problem10(a,n));
 
     }
     public static int problem1(int n, int min) {
@@ -102,5 +103,11 @@ public class HelloApplication {
             return 1;
         }
         return problem9(n - 1, k - 1) + problem9(n - 1, k);
+    }
+    public static int problem10(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return problem10(b, a % b);
     }
 }
