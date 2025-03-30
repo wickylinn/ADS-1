@@ -5,15 +5,20 @@ public class HelloApplication {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         int min = 1000000;
-        int a = input.nextInt();
+//        int a = input.nextInt();
         int n = input.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            int inp = input.nextInt();
+            arr[i] = inp;
+        }
         //System.out.println(problem1(n, min));
         //System.out.println(problem2(n));
         //System.out.println(problem3(n));
         //System.out.println(problem4(n));
         //System.out.println(problem5(n));
-        System.out.println(problem6(a,n));
-
+        //System.out.println(problem6(a,n));
+        problem7(n-1, arr);
     }
     public static int problem1(int n, int min) {
         int[] arr = new int[n];
@@ -71,5 +76,12 @@ public class HelloApplication {
         } else {
             return a * problem6(a, n - 1);
         }
+    }
+    public static void problem7(int i, int[] arr) {
+        if (i < 0) {
+            return;
+        }
+        System.out.print(arr[i] + " ");
+        problem7(i - 1, arr);
     }
 }
