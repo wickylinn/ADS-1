@@ -6,19 +6,21 @@ public class HelloApplication {
     public static void main(String[] args) {
         int min = 1000000;
 //        int a = input.nextInt();
-        int n = input.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            int inp = input.nextInt();
-            arr[i] = inp;
-        }
+//        int n = input.nextInt();
+        String s = input.next();
+//        int[] arr = new int[n];
+//        for (int i = 0; i < n; i++) {
+//            int inp = input.nextInt();
+//            arr[i] = inp;
+//        }
         //System.out.println(problem1(n, min));
         //System.out.println(problem2(n));
         //System.out.println(problem3(n));
         //System.out.println(problem4(n));
         //System.out.println(problem5(n));
         //System.out.println(problem6(a,n));
-        problem7(n-1, arr);
+        //problem7(n-1, arr);
+        System.out.println(problem8(s) ? "Yes" : "No");
     }
     public static int problem1(int n, int min) {
         int[] arr = new int[n];
@@ -83,5 +85,14 @@ public class HelloApplication {
         }
         System.out.print(arr[i] + " ");
         problem7(i - 1, arr);
+    }
+    public static boolean problem8(String s) {
+        if (s.isEmpty()) {
+            return true;
+        }
+        if (!Character.isDigit(s.charAt(0))) {
+            return false;
+        }
+        return problem8(s.substring(1));
     }
 }
