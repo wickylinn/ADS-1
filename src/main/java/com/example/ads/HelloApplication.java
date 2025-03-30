@@ -5,9 +5,9 @@ public class HelloApplication {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         int min = 1000000;
-//        int a = input.nextInt();
-//        int n = input.nextInt();
-        String s = input.next();
+        int a = input.nextInt();
+        int n = input.nextInt();
+//        String s = input.next();
 //        int[] arr = new int[n];
 //        for (int i = 0; i < n; i++) {
 //            int inp = input.nextInt();
@@ -20,7 +20,9 @@ public class HelloApplication {
         //System.out.println(problem5(n));
         //System.out.println(problem6(a,n));
         //problem7(n-1, arr);
-        System.out.println(problem8(s) ? "Yes" : "No");
+        //System.out.println(problem8(s) ? "Yes" : "No");
+        System.out.println(problem9(a, n));
+
     }
     public static int problem1(int n, int min) {
         int[] arr = new int[n];
@@ -94,5 +96,11 @@ public class HelloApplication {
             return false;
         }
         return problem8(s.substring(1));
+    }
+    public static int problem9(int n, int k) {
+        if (k == 0 || k == n) {
+            return 1;
+        }
+        return problem9(n - 1, k - 1) + problem9(n - 1, k);
     }
 }
